@@ -12,6 +12,12 @@ h1,
 h3 {
   font-weight: 100vh;
 }
+.brand{
+    color: #fff;
+}
+.a-brand{
+    text-decoration: none;
+}
 .weather-app {
   min-height: 100vh;
   background-image: url(./image/day/cloudy.jpg);
@@ -153,6 +159,26 @@ h3 {
   align-items: center;
 }
 
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff url(image/loader.gif) no-repeat center center;
+    background-size: 30%;
+    overflow: hidden;
+    z-index: 500;
+    transition: opacity 0.75s, visibility 0.75s;
+  }
+  .loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
 /* Responsive website */
 @media screen and (max-width: 800px) {
   .panel,
@@ -161,6 +187,9 @@ h3 {
     width: 100%;
     top: initial;
   }
+  .loader{
+    background-size: 50%;
+  }
 }
 @media screen and (max-width: 500px) {
   html {
@@ -168,6 +197,9 @@ h3 {
   }
   .cities {
     max-height: 200px;
+  }
+  .loader{
+    background-size: 80%;
   }
 }
 @media screen and (max-width: 350px) {
@@ -183,24 +215,4 @@ h3 {
 
 ::-webkit-scrollbar {
   width: 0px;
-}
-
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff url(image/loader.gif) no-repeat center center;
-  background-size: 30%;
-  overflow: hidden;
-  z-index: 500;
-  transition: opacity 0.75s, visibility 0.75s;
-}
-.loader--hidden {
-  opacity: 0;
-  visibility: hidden;
 }
