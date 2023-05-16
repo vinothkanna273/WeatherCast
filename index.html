@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Cast</title>
+    <link rel="icon" href="image/logo.png" type="image/icon type" />
+    <link rel="stylesheet" typr="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="loader">
+    </div>
+    <div class="weather-app" id="weather-app">
+        <div class="container">
+            <h3 class="brand">Weather Cast</h3>
+            <div>
+                <h1 class="temp"><span class="current" id="temperature">35</span>&#176;</h1>
+                <div class="city-time">
+                    <h3 class="name" id="current-city">Chennai</h3>
+                    <small>
+                        <span class="time" id="current-time">06:09</span>
+                        -
+                        <span class="date" id="current-date">
+                            
+                        </span>
+                    </small>
+                </div>
+                <div class="weather">
+                    <img src="icon/day/113.png" id="weather-icon" alt="icon" class="icon" width="50" height="50">
+                    <span class="condition">Cloudy</span>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <form id="locationInput">
+                <input type="text" class="search" id="search-city" placeholder="Search Location..." aria-label="City Search" aria-describedby="search-button">
+                <button type="submit" class="submit" id="search-button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+            <ul class="cities">
+            </ul>
+            <ol class="details">
+                <h4>Weather Details</h4>
+                <li>
+                    <span>Humidity</span>
+                    <span class="humidity"><span id="humidity"></span></span>
+                </li>
+                <li>
+                    <span>Wind</span>
+                    <span class="wind"><span id="wind-speed"></span></span>
+                </li>
+                <li>
+                    <span>UV index</span>
+                    <span class="cloud"><span id="uv-index"></span></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    
+
+    <!--loader-->
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader--hidden");
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild(loader);
+            });
+        });
+    </script>
+    <!--jQuery JS-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <!--Code to Jvascript File-->
+    <script src="index.js"></script>
+</body>
+</html>
